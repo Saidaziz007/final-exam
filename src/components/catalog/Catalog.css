@@ -1,0 +1,68 @@
+.catalog-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0 20px 0;
+}
+
+.catalog-top h1 {
+  font-size: 40px;
+  color: rgba(69, 69, 69, 1);
+}
+
+.catalog-top button {
+  padding: 11px 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid rgba(69, 69, 69, 1);
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.catalog-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.catalog-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: rgba(242, 242, 242, 1);
+  padding: 10px;
+  height: 250px;
+}
+
+.catalog-card-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  padding: 0 0 0 10px;
+}
+
+.catalog-card-right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catalog-card-left h2 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.catalog-card-left button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}

@@ -1,0 +1,82 @@
+.banner-all {
+  background-color: rgba(242, 242, 242, 1);
+  border-radius: 40px;
+}
+
+.hero {
+  padding-top: 20px;
+}
+
+.about-comp {
+  padding-top: 30px;
+}
+
+.products-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.brands-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.blog-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.blog-card {
+  border-bottom: 1px solid rgb(141, 141, 141);
+}
+
+.blog-card-info {
+  padding: 10px;
+}
+
+.blog-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.blog-card-title h2 {
+  font-size: 20px;
+}
+
+.blog-card-title svg {
+  font-size: 35px;
+}
+
+.blog-card-info p {
+  padding-bottom: 10px;
+}
+
+.production {
+  padding-top: 40px;
+}
+
+.production-all {
+  display: flex;
+  justify-content: space-between;
+}
+
+.production-left {
+  width: 50%;
+}
+
+.production-right {
+  width: 50%;
+}
+
+.production-left h1 {
+  font-size: 47px;
+}
+
+.production-right p {
+  font-size: 18px;
+}

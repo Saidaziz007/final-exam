@@ -1,0 +1,30 @@
+.about-comp-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.about-comp-card {
+  border: 1px solid rgb(211, 211, 211);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.about-comp-img img {
+  background-color: rgba(69, 69, 69, 1);
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+
+.about-comp-info h2 {
+  font-size: 20px;
+  color: rgba(69, 69, 69, 1);
+  max-width: 240px;
+  padding-bottom: 10px;
+}
+
+.about-comp-info p {
+  color: grey;
+  font-size: 16px;
+}

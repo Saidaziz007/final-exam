@@ -1,0 +1,97 @@
+.navbar-1 {
+  padding: 10px 0;
+}
+
+.navbar-1-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-1-list {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.navbar-1-order-call,
+.navbar-1-item a {
+  color: rgb(153, 153, 153);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-1-phone {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-1-number {
+  color: rgba(69, 69, 69, 1);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-2 {
+  padding: 15px 0;
+}
+
+.navbar-2-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.navbar-2-catalog button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  background-color: rgba(69, 69, 69, 1);
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-2-catalog button svg {
+  font-size: 23px;
+}
+
+.navbar-2-search {
+  width: 45%;
+  position: relative;
+}
+
+.navbar-2-search input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: 2px solid rgba(69, 69, 69, 1);
+  cursor: pointer;
+  max-width: 626px;
+}
+
+.navbar-2-search svg {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  font-size: 24px;
+}
+
+.navbar-2-items a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  font-weight: 600;
+  gap: 3px;
+}
+
+.navbar-2-items a svg {
+  font-size: 20px;
+}
