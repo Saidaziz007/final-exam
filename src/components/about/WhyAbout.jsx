@@ -3,15 +3,18 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import img from "../../assets/images/why-1.svg";
 import "./WhyAbout.css";
 import { ABOUT_CARDS } from "../../static";
+import { Link } from "react-router-dom";
 
 const WhyAbout = () => {
   return (
     <div className="about-comp-all">
       <div className="catalog-top">
         <h1>Почему NORNLIGHT?</h1>
-        <button>
-          О компании <FaArrowRightLong />
-        </button>
+        <Link to={"/about"}>
+          <button>
+            О компании <FaArrowRightLong />
+          </button>
+        </Link>
       </div>
       <div className="about-comp-wrapper">
         {ABOUT_CARDS?.map((el) => (
@@ -26,6 +29,9 @@ const WhyAbout = () => {
           </div>
         ))}
       </div>
+      <button className="catalog-btn-res">
+        Весь каталог <FaArrowRightLong />
+      </button>
     </div>
   );
 };

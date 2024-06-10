@@ -45,3 +45,42 @@
   width: 10px;
   height: 10px;
 }
+
+@media (max-width: 1000px) {
+  .banner-left h1 {
+    font-size: 44px;
+  }
+  .banner-left span {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 860px) {
+  .banner-left h1 {
+    font-size: 30px;
+  }
+  .banner-left span {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 727px) {
+  .banner {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .banner-left {
+    width: 100%;
+    text-align: center;
+  }
+  .banner-right {
+    width: 100%;
+  }
+  .banner-right img {
+    height: 300px;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: 100% !important;
+  }
+}

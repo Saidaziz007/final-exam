@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo-all.svg";
 import { RiMenu2Line } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
-import { LuBarChart } from "react-icons/lu";
+import { LuBarChart, LuMenu } from "react-icons/lu";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
+import axios from "axios";
+
+const API_URL =
+  "https://6634b1ce9bb0df2359a2693f.mockapi.io/saidaziz-api/products";
 
 const Header = () => {
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    axios
+      .get(API_URL)
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+  let handleSearch = (data) => {
+    return data?.filter((pr) =>
+      pr.title.toLowerCase().includes(search.toLowerCase().trim())
+    );
+  };
   return (
     <header>
       <nav className="navbar-1">
@@ -45,6 +63,7 @@ const Header = () => {
         <div className="container">
           <div className="navbar-2-all">
             <div className="navbar-2-logo">
+              <LuMenu />
               <NavLink to={"/"}>
                 <img src={logo} alt="" />
               </NavLink>
@@ -52,11 +71,41 @@ const Header = () => {
             <div className="navbar-2-catalog">
               <button>
                 <RiMenu2Line />
-                Каталог
+                <p>Каталог</p>
               </button>
             </div>
             <div className="navbar-2-search">
-              <input type="text" placeholder="Поиск по товарам" />
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                type="text"
+                placeholder="Поиск по товарам"
+              />
+              {search.trim() ? (
+                <ul className="nav-search">
+                  {search.trim() ? (
+                    handleSearch(data).length ? (
+                      handleSearch(data)?.map((el) => (
+                        <div key={el.id} className="nav-result">
+                          <img src={el.url[0]} alt="" />
+                          <li>{el.title}</li>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="nav-search-empty">
+                        <img
+                          src="https://stores.blackberrys.com/VendorpageTheme/Enterprise/EThemeForBlackberrys/images/product-not-found.jpg"
+                          alt=""
+                        />
+                      </div>
+                    )
+                  ) : (
+                    <></>
+                  )}
+                </ul>
+              ) : (
+                <></>
+              )}
               <IoMdSearch />
             </div>
             <div className="navbar-2-items">
@@ -77,6 +126,48 @@ const Header = () => {
                 Корзина
               </NavLink>
             </div>
+            <div className="navbar-2-items-res">
+              <NavLink to={"/wishlist"}>
+                <FaRegHeart />
+              </NavLink>
+              <NavLink to={"/basket"}>
+                <FiShoppingCart />
+              </NavLink>
+            </div>
+          </div>
+          <div className="navbar-2-search-res">
+            <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+              placeholder="Поиск по товарам"
+            />
+            {search.trim() ? (
+              <ul className="nav-search">
+                {search.trim() ? (
+                  handleSearch(data).length ? (
+                    handleSearch(data)?.map((el) => (
+                      <div key={el.id} className="nav-result">
+                        <img src={el.url[0]} alt="" />
+                        <li>{el.title}</li>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="nav-search-empty">
+                      <img
+                        src="https://stores.blackberrys.com/VendorpageTheme/Enterprise/EThemeForBlackberrys/images/product-not-found.jpg"
+                        alt=""
+                      />
+                    </div>
+                  )
+                ) : (
+                  <></>
+                )}
+              </ul>
+            ) : (
+              <></>
+            )}
+            <IoMdSearch />
           </div>
         </div>
       </nav>

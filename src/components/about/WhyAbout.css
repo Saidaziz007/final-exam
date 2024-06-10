@@ -28,3 +28,43 @@
   color: grey;
   font-size: 16px;
 }
+
+@media (max-width: 870px) {
+  .about-comp-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-comp-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 630px) {
+  .about-comp-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .catalog-top h1 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 455px) {
+  .about-comp-info h2 {
+    font-size: 15px;
+    max-width: 450px;
+  }
+  .about-comp-info p {
+    font-size: 11px;
+    max-width: 450px;
+  }
+  .about-comp-img img {
+    margin-bottom: 5px;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .catalog-top h1 {
+    font-size: 25px;
+  }
+}

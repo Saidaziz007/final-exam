@@ -6,13 +6,9 @@ import WhyAbout from "../../components/about/WhyAbout";
 import Card from "../../components/cards/Card";
 import { useGetProductsQuery } from "../../context/productApi";
 import { FaArrowRightLong } from "react-icons/fa6";
-import brands1 from "../../assets/images/brands1.svg";
-import brands2 from "../../assets/images/brands2.svg";
-import brands3 from "../../assets/images/brands3.svg";
-import blog1 from "../../assets/images/blog1.png";
-import blog2 from "../../assets/images/blog2.png";
-import blog3 from "../../assets/images/blog3.png";
-import { GoArrowUpRight } from "react-icons/go";
+import { Link } from "react-router-dom";
+import BlogCard from "../../components/blog-component/BlogCard";
+import Brands from "../../components/brands/Brands";
 
 const Home = () => {
   const { data } = useGetProductsQuery();
@@ -39,9 +35,11 @@ const Home = () => {
         <div className="container">
           <div className="catalog-top">
             <h1>Популярные товары</h1>
-            <button>
-              Все товары <FaArrowRightLong />
-            </button>
+            <Link to={"/all-products"}>
+              <button>
+                Все товары <FaArrowRightLong />
+              </button>
+            </Link>
           </div>
           <div className="products-wrapper">
             <Card data={data} />
@@ -50,63 +48,12 @@ const Home = () => {
       </section>
       <section className="brands">
         <div className="container">
-          <div className="catalog-top">
-            <h1>Только проверенные бренды</h1>
-          </div>
-          <div className="brands-wrapper">
-            <img src={brands1} alt="" />
-            <img src={brands2} alt="" />
-            <img src={brands3} alt="" />
-            <img src={brands1} alt="" />
-          </div>
+          <Brands />
         </div>
       </section>
       <section className="blog">
         <div className="container">
-          <div className="catalog-top">
-            <h1>Блог</h1>
-            <button>
-              Перейти в блог <FaArrowRightLong />
-            </button>
-          </div>
-          <div className="blog-wrapper">
-            <div className="blog-card">
-              <div className="blog-card-img">
-                <img src={blog1} alt="" />
-              </div>
-              <div className="blog-card-info">
-                <div className="blog-card-title">
-                  <h2>Как правильно освещать дом снаружи?</h2>
-                  <GoArrowUpRight />
-                </div>
-                <p>01.01.2024</p>
-              </div>
-            </div>
-            <div className="blog-card">
-              <div className="blog-card-img">
-                <img src={blog2} alt="" />
-              </div>
-              <div className="blog-card-info">
-                <div className="blog-card-title">
-                  <h2>Как правильно освещать дом снаружи?</h2>
-                  <GoArrowUpRight />
-                </div>
-                <p>01.01.2024</p>
-              </div>
-            </div>
-            <div className="blog-card">
-              <div className="blog-card-img">
-                <img src={blog3} alt="" />
-              </div>
-              <div className="blog-card-info">
-                <div className="blog-card-title">
-                  <h2>Как правильно освещать дом снаружи?</h2>
-                  <GoArrowUpRight />
-                </div>
-                <p>01.01.2024</p>
-              </div>
-            </div>
-          </div>
+          <BlogCard />
         </div>
       </section>
       <section className="production">

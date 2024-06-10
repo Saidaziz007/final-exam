@@ -13,6 +13,7 @@ import Single from "./pages/single/Single.jsx";
 import Wishlist from "./pages/wishlist/Wishlist.jsx";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/footer/Footer.jsx";
+import AllProducts from "./pages/all-products/AllProducts.jsx";
 
 function App() {
   return (
@@ -28,8 +29,9 @@ function App() {
         <Route path="/garant" element={<Garant />} />
         <Route path="/not-found" element={<Notfound />} />
         <Route path="/return" element={<Return />} />
-        <Route path="/single" element={<Single />} />
+        <Route path="/product/:id" element={<Single />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/all-products" element={<AllProducts />} />
       </Routes>
       <Footer />
     </>

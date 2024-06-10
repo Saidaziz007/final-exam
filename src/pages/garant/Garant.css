@@ -1,0 +1,52 @@
+.garant-all {
+  display: flex;
+  padding-bottom: 40px;
+}
+
+.garant-left {
+  width: 45%;
+}
+
+.garant-right {
+  width: 55%;
+}
+
+.garant-left h1 {
+  font-size: 45px;
+}
+
+.garant-right h2 {
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
+.garant-right p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.garant-right ul {
+  list-style: disc;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.garant-right li {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 545px) {
+  .garant-all {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .garant-left {
+    width: 100%;
+  }
+  .garant-right {
+    width: 100%;
+  }
+}
